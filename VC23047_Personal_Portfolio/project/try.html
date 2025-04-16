@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Button</title>
+    <style>
+        #video-container {
+            display: none; /* Hide video by default */
+            text-align: center;
+            margin-top: 20px;
+        }
+        video {
+            width: 80%;
+            max-width: 600px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="showVideo()">Watch Video</button>
+
+    <div id="video-container">
+        <video id="myVideo" controls>
+            <source src="your-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        function showVideo() {
+            document.getElementById('video-container').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

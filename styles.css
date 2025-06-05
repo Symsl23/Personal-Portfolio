@@ -1,0 +1,786 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300:400:500:600:700:800:900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --bg-color: #1f242d;
+    --second-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+    --third-color: #0FF74D;
+    --forth-color: #B1FF08;
+    --fifth-color: #BE08FE;
+}
+
+html, body{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color)
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header.sticky{
+    border-bottom: .1rem solid rgba(0, 0, 0, .2);
+}
+
+.logo{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--fifth-color)
+}
+
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img{
+    width: 40vw;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-2.4rem);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.home-content h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+span{
+    color: var(--fifth-color);
+}
+
+.home-content h3:nth-of-type(2){
+    margin-bottom: 2rem;
+}
+
+.home-content h1{
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content p{
+    font-size: 1.6rem;
+}
+
+.social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--fifth-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--fifth-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+}
+
+.social-media a:hover{
+    background: var(--fifth-color);
+    color: var(--second-color);
+    box-shadow: 0 0 1rem var(--fifth-color);
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--fifth-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--fifth-color);
+    font-size: 1.6rem;
+    color: var(--second-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+.btn:hover{
+    box-shadow: none;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--second-color);
+}
+
+.about-img img{
+    width: 70vw;
+}
+
+.heading{
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+.about-content h2{
+    text-align: left;
+    line-height: 1.2;
+}
+
+.about-content h3{
+    font-size: 2.6rem;
+}
+
+.about-content p{
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+.about-content ul {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+/* Section Styling */
+.skills h2 {
+    margin-bottom: 4rem;
+}
+
+/* Skills Container */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 3-column layout */
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Skills Box */
+.skills-box {
+    display: flex;
+    align-items: center;
+    background: var(--second-color);
+    padding: 0.8rem;
+    border-radius: 12px;
+    border: 2px solid var(--bg-color);
+    transition: 0.5s ease;
+    width: 100%;
+    max-width: 300px; /* Smaller box */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effect */
+.skills-box:hover {
+    border-color: var(--fifth-color);
+    transform: scale(1.25);  /*asal 1.02*/
+}
+
+/* Image on the Left */
+.skills-box img {
+    width: 60px; /* Set a fixed width */
+    height: 60px; /* Set a fixed height */
+    object-fit: contain; /* Prevent cropping */
+    border-radius: 8px;
+    margin-right: 10px;
+    background-color: var(--text-color); /* Add a background if needed */
+    padding: 5px; /* Add some padding to avoid tight cropping */
+}
+
+/* Text Content */
+.skills-info {
+    flex: 1;
+    text-align: left;
+}
+
+.skills-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 3px;
+}
+
+.skills-box p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.project{
+    background-color: var(--second-color);
+    /*padding: 6rem 6rem 6rem; /* Adjust top and bottom padding */
+}
+
+.project h2{
+    margin-bottom: 4rem;
+}
+
+.project p {
+    font-size: 1rem;
+}
+
+.project-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.project-container .project-box{
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem;
+    overflow: hidden;
+    display: flex;
+    aspect-ratio: 7/5; /*can adjust the ratio. 16/9 is the past ratio*/
+}
+
+.project-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*change cover to contain to fully show without cropping*/
+    transition: .5s ease;
+}
+
+.project-box:hover img{
+    transform: scale(1.1);
+}
+
+.project-box .project-layer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .1), var(--fifth-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+
+.project-box:hover .project-layer{
+    transform: translateY(0);
+}
+
+.project-layer h4{
+    font-size: 2rem;
+}
+
+.project-layer p{
+    font: 1.6rem; /*asal 1.6rem*/
+    margin: .3rem 0 1rem;
+}
+
+.project-layer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+    transition: .3s ease;
+}
+
+.project-layer a i{
+    font-size: 2rem;
+    color: var(--second-color);
+}
+
+.project-layer .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Space between buttons */
+    flex-wrap: wrap;
+}
+
+.project-layer a:hover {
+    background: var(--fifth-color);
+}
+
+.contact{
+    background-color: var(--second-color);
+}
+
+.contact h2{
+    margin-bottom: 3rem;
+}
+
+.contact .contact-info {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact .contact-info h3{
+    color: var(--fifth-color);
+    font-size: large;
+}
+
+.contact .contact-info {
+    font-size: small;
+}
+
+.contact form{
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea{
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contact form .input-box input{
+    width: 49%;
+}
+
+.contact form textarea{
+    resize: none;
+}
+
+.contact form .btn{
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+}
+
+.footer-text{
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--fifth-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover{
+    box-shadow: 0 0 1rem var(--fifth-color);
+}
+
+.footer-iconTop a i{
+    font-size: 2.4rem;
+    color: var(--second-color);
+}
+
+@media (max-width: 1200px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px){
+    .header{
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .skills {
+        padding-bottom: 7rem;
+    }
+
+    .project {
+        padding-bottom: 7rem;
+    }
+
+    .achievements {
+        padding-bottom: 7rem;
+    }
+
+    .contact {
+        min-height: auto;
+    }
+
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width: 768px){
+    #menu-icon{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+    }
+
+    .about-img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .skills h2 {
+        margin-bottom: 3rem;
+    }
+
+    .skills-container {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for smaller screens */
+    }
+
+    .skills-box {
+        max-width: 100%;
+    }
+
+    .project h2 {
+        margin-bottom: 3rem;
+    }
+
+    .project-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .achievements h2 {
+        margin-bottom: 3rem;
+    }
+
+    .achievements-container {
+        grid-template-columns: 1fr; /* Stack items in one column */
+    }
+}
+
+@media (max-width: 617px) {
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 50%;
+    }
+
+    .contact form .input-box input {
+        width: 100%;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Stack in smaller width */
+    }
+
+    .skills-box {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .skills-box img {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 365px) {
+    .home-img img {
+        width: 90vw;
+    }
+
+    .about-img {
+        width: 90vw;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-box {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .skills-box img {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/*============END/*============*/
+.achievements{
+    margin-bottom: 6rem; /* Increase this value to add more space */
+}
+
+.achievements h2 {
+    margin-bottom: 4rem;
+}
+
+/*.achievements-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}*/                    /*yang asal*/
+
+.achievements-container{
+    display: grid;
+    /*grid-template-columns: repeat(3, 1fr); ni yg asal jadi 3 column tapi mobile dia kcik*/
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ensures responsiveness */
+    grid-auto-rows: 1fr; /* Ensures all rows have the same height */
+    align-items: stretch; /* Stretches items to fill the row */
+    gap: 2.5rem;
+}
+
+.achievements-container .achievements-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content evenly */
+    flex: 1;
+    background: var(--second-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+    max-height: 400px; /* Set a max height limit */
+}
+
+.achievements-container .achievements-box:hover{
+    border-color: var(--fifth-color);
+    transform: scale(1.02);
+}
+
+.achievements-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is evenly spaced */
+    align-items: center; /* Centers content horizontally */
+    width: 100%;
+}
+
+.achievements-box i{
+    font-size: 7rem;
+    color: var(--fifth-color);
+}
+
+.achievements-box h3{
+    font-size: 2rem;
+    flex-grow: 1; /* Makes all h3 elements contribute to equal height */
+}
+
+.achievements-box p {
+    font-size: 1.2rem;
+    margin: 1rem 0 3rem;
+    flex-grow: 1; /* Ensures paragraph sections stretch equally */
+}
+
+.achievements-box .btn {
+    display: inline-block;
+    font-size: 1.4rem;
+    padding: 0.8rem 2rem; /* Adjust padding for a normal-sized button */
+    border-radius: 2rem;
+    background: var(--fifth-color);
+    color: var(--second-color);
+    text-decoration: none;
+    transition: 0.3s;
+    max-width: 130px; /* Ensures the button does not stretch too much */
+    width: auto; /* Makes sure it only takes necessary space */
+    margin-top: auto; /* Pushes button to the bottom while keeping it centered */
+}
+
+/* Popup Background */
+/* Popup Background */
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Popup Box */
+.popup {
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Certificate Image */
+.popup img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Certificate PDF (iframe) */
+.popup iframe {
+    width: 100%;
+    max-height: 400px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Close Button - Moved Outside */
+.close-btn {
+    position: absolute;
+    top: -15px; /* Move outside the box */
+    right: -15px; /* Move outside the box */
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--fifth-color-color);
+    background: var(--bg-color);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Effect */
+.close-btn:hover {
+    background: darkred;
+}
